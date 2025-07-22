@@ -18,8 +18,7 @@ if(isset($_SESSION['user_id'])) {
   <!-- copia exatamente o <head> do teu register.html -->
 </head>
 <body>
-  <!-- copia TODO o <body> do teu register.html -->
-   <header>
+  <header>
     <div class="container header-container">
       <div class="logo">
         <img src="assets/phil.jpeg" alt="Logo PHIL ASEAN" id="logo-img">
@@ -30,12 +29,12 @@ if(isset($_SESSION['user_id'])) {
           <i class="fas fa-bars"></i>
         </button>
         <ul id="main-menu">
-          <li><a href="index.php"><i class="fas fa-home"></i> Início</a></li>
-          <li><a href="index.php#services"><i class="fas fa-ship"></i> Serviços</a></li>
-          <li><a href="index.php#about"><i class="fas fa-info-circle"></i> Sobre</a></li>
-          <li><a href="login.php"><i class="fas fa-sign-in-alt"></i> Login</a></li>
-          <li><a href="register.php"><i class="fas fa-user-plus"></i> Registro</a></li>
-          <li><a href="index.php#contact"><i class="fas fa-envelope"></i> Contato</a></li>
+          <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+          <li><a href="index.html#services"><i class="fas fa-ship"></i> Serviços</a></li>
+          <li><a href="index.html#about"><i class="fas fa-info-circle"></i> Sobre</a></li>
+          <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+          <li><a href="register.html"><i class="fas fa-user-plus"></i> Registro</a></li>
+          <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Contato</a></li>
         </ul>
       </nav>
     </div>
@@ -43,9 +42,13 @@ if(isset($_SESSION['user_id'])) {
 
   <main>
     <div class="section-title">
-      <h2>Login</h2>
+      <h2>Registro</h2>
     </div>
-    <form id="loginForm">
+    <form id="registerForm">
+      <div class="form-group">
+        <label for="name">Nome Completo</label>
+        <input id="name" name="name" class="form-control" required>
+      </div>
       <div class="form-group">
         <label for="email">Email</label>
         <input id="email" name="email" type="email" class="form-control" required>
@@ -54,9 +57,9 @@ if(isset($_SESSION['user_id'])) {
         <label for="password">Senha</label>
         <input id="password" name="password" type="password" class="form-control" required>
       </div>
-      <button type="submit" class="btn submit-btn">Entrar</button>
+      <button type="submit" class="btn submit-btn">Registrar</button>
       <div class="link-group">
-        <p>Não tem conta? <a href="register.html">Registre-se</a></p>
+        <p>Já tem conta? <a href="login.html">Faça login</a></p>
       </div>
     </form>
   </main>
@@ -70,6 +73,7 @@ if(isset($_SESSION['user_id'])) {
       document.getElementById('main-menu').classList.toggle('show');
     });
   </script>
+
   <script src="script.js" defer></script>
 </body>
 </html>
