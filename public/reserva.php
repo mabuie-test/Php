@@ -14,11 +14,7 @@ if(!isset($_SESSION['user_id'])) {
   <link rel="icon" href="assets/phil.jpeg" type="image/jpeg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
-  <!-- copia exatamente o <head> do teu reserva.html -->
-</head>
-<body>
-  <!-- copia TODO o <body> do teu reserva.html -->
-<style>
+  <style>
     /* Reset e tipografia */
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     body { font-family: Arial, sans-serif; background: #f8f9fa; color: #212529; }
@@ -104,8 +100,10 @@ if(!isset($_SESSION['user_id'])) {
   </style>
 </head>
 <body>
+ 
+  <!-- copia TODO o <body> do teu reserva.html -->
 
-  <!-- Header -->
+    <!-- Header -->
   <header>
     <div class="container header-container">
       <div class="logo">
@@ -231,6 +229,7 @@ if(!isset($_SESSION['user_id'])) {
         document.getElementById('main-menu').classList.toggle('show')
       );
   </script>
+  
   <script src="script.js" defer></script>
 </body>
 </html>
