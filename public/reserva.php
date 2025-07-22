@@ -174,7 +174,7 @@ if(!isset($_SESSION['user_id'])) {
       </div>
       <div class="form-group">
         <label for="services">Serviços Desejados</label>
-        <select id="services" name="services" multiple class="form-control" required>
+          <select id="services" name="services[]" multiple class="form-control" required>
           <option value="Tubos Hidráulicos">Tubos Hidráulicos</option>
           <option value="Fornecimento de Água Potável">Fornecimento de Água Potável</option>
           <option value="Garbage Collector">Garbage Collector</option>
