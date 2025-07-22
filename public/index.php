@@ -93,9 +93,9 @@ session_start();
           <li class="auth-dropdown">
             <a href="#"><i class="fas fa-user"></i> Conta <i class="fas fa-chevron-down"></i></a>
             <div class="auth-dropdown-content">
-              <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
-              <a href="register.html"><i class="fas fa-user-plus"></i> Registro</a>
-              <a href="reserva.html"><i class="fas fa-tachometer-alt"></i> Área Cliente</a>
+              <a href="login.php"><i class="fas fa-sign-in-alt"></i> Login</a>
+              <a href="register.php"><i class="fas fa-user-plus"></i> Registro</a>
+              <a href="reserva.php"><i class="fas fa-tachometer-alt"></i> Área Cliente</a>
             </div>
           </li>
         </ul>
