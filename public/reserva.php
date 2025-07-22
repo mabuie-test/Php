@@ -115,11 +115,11 @@ if(!isset($_SESSION['user_id'])) {
           <i class="fas fa-bars"></i>
         </button>
         <ul id="main-menu">
-          <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
-          <li><a href="index.html#services"><i class="fas fa-ship"></i> Serviços</a></li>
-          <li><a href="index.html#about"><i class="fas fa-info-circle"></i> Sobre</a></li>
-          <li><a href="reserva.html"><i class="fas fa-clipboard-list"></i> Área Cliente</a></li>
-          <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Contato</a></li>
+          <li><a href="index.php"><i class="fas fa-home"></i> Início</a></li>
+          <li><a href="index.php#services"><i class="fas fa-ship"></i> Serviços</a></li>
+          <li><a href="index.php#about"><i class="fas fa-info-circle"></i> Sobre</a></li>
+          <li><a href="reserva.php"><i class="fas fa-clipboard-list"></i> Área Cliente</a></li>
+          <li><a href="index.php#contact"><i class="fas fa-envelope"></i> Contato</a></li>
           <li>
             <button id="logoutBtn">
               <i class="fas fa-sign-out-alt"></i> Logout
