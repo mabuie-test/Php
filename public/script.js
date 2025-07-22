@@ -85,16 +85,15 @@ if (orderForm) {
       service_type: f.get('service_type'),
       description:  f.get('description')
     };
+    // Faz a fetch de debug
     const json = await api('/submit_request.php', { method: 'POST', body });
-    if (json.message) {
-      alert(json.message);
-      orderForm.reset();
-      loadOrderHistory();
-    } else {
-      alert(json.error || 'Erro ao submeter pedido');
-    }
+    // Mostra tudo num alert
+    alert('Debug submit_request.php:\n' + JSON.stringify(json, null, 2));
+    // Para por aqui até sabermos o que chega
+    return;
   });
 }
+
 
 // Histórico de pedidos (Cliente)
 async function loadOrderHistory() {
