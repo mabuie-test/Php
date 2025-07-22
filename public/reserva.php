@@ -196,6 +196,8 @@ if(!isset($_SESSION['user_id'])) {
 
     <!-- Histórico de Pedidos -->
     <section class="section" id="history">
+    <pre id="debugOutput" style="background:#f0f0f0; padding:10px; overflow:auto; max-height:200px;"></pre>
+
       <div class="container">
         <div class="section-title">
           <h2>Histórico de Pedidos</h2>
