@@ -55,7 +55,6 @@ if (loginForm) {
     };
     const json = await api('/login.php', { method: 'POST', body });
     if (json && json.includes('bem‑sucedido')) {
-      // Redireciona para a home
       window.location.href = 'index.php';
     } else {
       alert(json || 'Erro no login');
@@ -81,19 +80,24 @@ if (orderForm) {
   orderForm.addEventListener('submit', async e => {
     e.preventDefault();
     const f = new FormData(orderForm);
+
+    // Mapeia services e notes para os campos que o backend espera
+    const selectedServices = f.getAll('services');          // array de serviços
     const body = {
-      service_type: f.get('service_type'),
-      description:  f.get('description')
+      service_type: selectedServices.join(', '),             // concatena num string
+      description:  f.get('notes') || ''                     // observações adicionais
     };
-    // Faz a fetch de debug
+
     const json = await api('/submit_request.php', { method: 'POST', body });
-    // Mostra tudo num alert
-    alert('Debug submit_request.php:\n' + JSON.stringify(json, null, 2));
-    // Para por aqui até sabermos o que chega
-    return;
+    if (json.message) {
+      alert(json.message);
+      orderForm.reset();
+      loadOrderHistory();
+    } else {
+      alert(json.error || 'Erro ao submeter pedido');
+    }
   });
 }
-
 
 // Histórico de pedidos (Cliente)
 async function loadOrderHistory() {
@@ -106,8 +110,8 @@ async function loadOrderHistory() {
     tr.innerHTML = `
       <td>${new Date(o.created_at).toLocaleString()}</td>
       <td>${o.service_type}</td>
-      <td>${o.description}</td>
       <td>${o.status}</td>
+      <td><a href="#">Ver Factura</a></td>
     `;
     tbody.appendChild(tr);
   });
@@ -145,7 +149,6 @@ async function loadAllRequests() {
     tbody.appendChild(tr);
   });
 
-  // Adiciona listener aos selects
   document.querySelectorAll('.status-select').forEach(sel => {
     sel.addEventListener('change', async () => {
       const id = sel.dataset.id;
