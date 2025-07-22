@@ -137,7 +137,7 @@ if(!isset($_SESSION['user_id'])) {
     </div>
 
     <!-- Formulário de Pedido -->
-    <form id="orderForm">
+    <form id="orderForm" action="/backend/submit_request.php" method="post">
       <div class="form-group">
         <label for="name">Nome Completo</label>
         <input id="name" name="name" class="form-control" required>
@@ -191,7 +191,7 @@ if(!isset($_SESSION['user_id'])) {
         <label for="notes">Observações Adicionais</label>
         <textarea id="notes" name="notes" class="form-control"></textarea>
       </div>
-      <button type="submit" class="submit-btn">Enviar Pedido</button>
+  <button type="submit" class="submit-btn">Enviar Pedido</button>
     </form>
 
     <!-- Histórico de Pedidos -->
