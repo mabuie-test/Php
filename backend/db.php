@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-$host   = 'localhost';
-$dbname = 'phil_asean';      // ajusta para o nome da tua BD
-$user   = 'seu_usuario_mysql';
-$pass   = 'sua_password_mysql';
-$charset= 'utf8mb4';
+$host    = 'localhost';
+$dbname  = 'philaded_Philaseanproviderwebsite';
+$user    = 'philaded_Philaseanproviderwebsite';
+$pass    = 'Philaseanproviderwebsite';
+$charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
 $options = [
@@ -20,4 +20,3 @@ try {
     echo "Erro na conexão: " . $e->getMessage();
     exit;
 }
-
