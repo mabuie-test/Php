@@ -257,6 +257,10 @@ if($_SESSION['role']!=='admin') header('Location:login.php');
     </section>
   </div>
 
-  <script src="admin.js" defer></script>
+
+  <!-- em vez de <script src="script.js"> -->
+<script src="script.js" defer></script>   <!-- ainda precisa para logout/menu -->
+<script src="admin.js" defer></script>    <!-- só admin -->
+
 </body>
 </html>
