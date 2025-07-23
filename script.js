@@ -1,10 +1,9 @@
-// script.js
+// public/script.js
 
-const API_BASE = '/backend'; // ajusta se necessário
+const API_BASE = '/backend'; // <<— o teu backend local
 
-// Lê JSON e faz fetch, lançando erro se status != 2xx
 async function api(path, opts = {}) {
-  const headers = { 'Content-Type': 'application/json', ...(opts.headers||{}) };
+  const headers = { 'Content-Type': 'application/json' };
   const res = await fetch(`${API_BASE}${path}`, {
     ...opts,
     headers,
@@ -37,42 +36,27 @@ async function register(name, email, password) {
   window.location.href = 'login.php';
 }
 
-// — LOGOUT (chama endpoint e limpa sessão) —
+// — LOGOUT —
 async function logout() {
   await api('/logout.php', { method: 'GET' });
   window.location.href = 'login.php';
 }
 
-// — FORM HANDLERS —
+// — HANDLERS —
 document.addEventListener('DOMContentLoaded', () => {
-  // Login
-  const loginForm = document.getElementById('loginForm');
-  if (loginForm) {
-    loginForm.addEventListener('submit', e => {
-      e.preventDefault();
-      login(loginForm.email.value, loginForm.password.value)
-        .catch(err => alert(err.message));
-    });
-  }
+  const lf = document.getElementById('loginForm');
+  if (lf) lf.addEventListener('submit', e => {
+    e.preventDefault();
+    login(lf.email.value, lf.password.value).catch(err => alert(err.message));
+  });
 
-  // Registo
-  const registerForm = document.getElementById('registerForm');
-  if (registerForm) {
-    registerForm.addEventListener('submit', e => {
-      e.preventDefault();
-      register(
-        registerForm.name.value,
-        registerForm.email.value,
-        registerForm.password.value
-      ).catch(err => alert(err.message));
-    });
-  }
+  const rf = document.getElementById('registerForm');
+  if (rf) rf.addEventListener('submit', e => {
+    e.preventDefault();
+    register(rf.name.value, rf.email.value, rf.password.value)
+      .catch(err => alert(err.message));
+  });
 
-  // Logout (botão com id="logoutBtn")
-  const logoutBtn = document.getElementById('logoutBtn');
-  if (logoutBtn) {
-    logoutBtn.addEventListener('click', () => {
-      logout().catch(err => alert(err.message));
-    });
-  }
+  const ob = document.getElementById('logoutBtn');
+  if (ob) ob.addEventListener('click', () => logout().catch(err => alert(err.message)));
 });
